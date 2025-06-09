@@ -4,13 +4,21 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@bufbuild/buf": "^1.54.0",
+    "@bufbuild/protobuf": "^2.5.2",
+    "@bufbuild/protoc-gen-es": "^2.5.2",
+    "@connectrpc/connect": "^2.0.2",
+    "@grpc/grpc-js": "^1.13.4",
+    "@grpc/proto-loader": "^0.7.15",
     "@types/node": "^22.15.29",
+    "ts-proto": "^2.7.2",
     "typescript": "^5.8.3"
   },
   "scripts": {
     "build": "tsc",
     "start": "node ./bin/index.js",
-    "dev": "nodemon ./src/index.ts"
+    "dev": "nodemon ./src/index.ts",
+    "gen:proto": "npx protoc --ts_proto_out=src/generated --proto_path=protos protos/*.proto"
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
